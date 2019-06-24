@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class SpringController {
     private static final Logger logger = LoggerFactory.getLogger(SpringController.class);
@@ -14,16 +16,16 @@ public class SpringController {
     private final RequestHandler requestHandler = new RequestHandler();
 
     @GetMapping("/get")
-    public ResponseEntity<String> get() {
+    public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
         logger.info("Received GET request /get");
 
-        return requestHandler.get();
+        return requestHandler.get(incomingRequest);
     }
 
     @PostMapping("/post")
-    public ResponseEntity<String> post() {
+    public ResponseEntity<String> post(HttpServletRequest incomingRequest) {
         logger.info("Received POST request /post");
 
-        return requestHandler.post();
+        return requestHandler.post(incomingRequest);
     }
 }
