@@ -5,10 +5,6 @@
 
   <requiredProperties>
     <requiredProperty key="app-name"></requiredProperty>
-    <requiredProperty key="resource-name"></requiredProperty>
-    <requiredProperty key="teapot-enabled">
-      <defaultValue>n</defaultValue>
-    </requiredProperty>
   </requiredProperties>
 
   <fileSets>
