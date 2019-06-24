@@ -65,6 +65,48 @@ All interesting parts of this archetype are stored within
 - This archetype is intended to generate enough classes and structure to make it very obvious how to create APIs, while not generating too much and risking infringing
 on the core domain of the APIs it intends to implement.
 
+### Java files generated
+
+If I call `./ah-poc-papi-springboot-archetype/generate-papi com.aimless-hammer example-papi ExamplePapi`, I get a folder called `example-papi`.
+
+Here is the result of `tree example-papi/src/main/java/com/aimless_hammer/`
+
+```
+Robs-Computer:templating$ tree example-papi/src/main/java/com/aimless_hammer/
+example-papi/src/main/java/com/aimless_hammer/
+├── Main.java
+├── SpringController.java
+├── SpringbootApplication.java
+└── papi
+    ├── RequestHandler.java
+    └── SapiRestClient.java
+
+1 directory, 5 files
+Robs-Computer:templating$ 
+```
+
+Here is the result of `tree example-papi/src/test/java/com/aimless_hammer/`
+
+```
+Robs-Computer:templating$ tree example-papi/src/test/java/com/aimless_hammer/
+example-papi/src/test/java/com/aimless_hammer/
+├── integration
+│   ├── IntegrationTest.java
+│   └── SpringHttpClient.java
+└── unit
+    └── RequestHandlerTest.java
+
+2 directories, 3 files
+Robs-Computer:templating$ 
+```
+### Supporting files
+
+- Two scripts: `build-jar` and `run-tests`, which do what you might guess.
+
+- A `README.md` with a lot of blanks.
+
+- A `.gitignore` which ignores `target/` and `.idea/workspace.xml`.
+
 ## Troubleshooting
 
 #### It generates too many files/duplicated files/files that it used to include but I deleted ages ago
@@ -80,4 +122,4 @@ on the core domain of the APIs it intends to implement.
 - I fixed it by going on project structure (cmd-;) and removing the project SDK(s) then readding whatever was required.
     - In the project structure dialog box, navigate to Platform Settings -> SDKs in the left panel, then use the '-' button to remove all the
       SDKs you don't think you need. IntelliJ should prompt you to readd them, or, if it doesn't, you can readd them yourself using the '+'
-      button.  
+      button.
