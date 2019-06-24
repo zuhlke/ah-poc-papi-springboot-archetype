@@ -21,7 +21,9 @@
         <fileSet filtered="true" packaged="true">
             <directory>src/test/java</directory>
             <includes>
-                <include>**/*.java</include>
+                <include>integration/IntegrationTest.java</include>
+                <include>integration/SpringHttpClient.java</include>
+                <include>unit/RequestHandlerTest.java</include>
             </includes>
         </fileSet>
         <fileSet filtered="false">
