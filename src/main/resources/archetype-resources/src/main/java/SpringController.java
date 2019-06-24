@@ -1,7 +1,6 @@
 package $package;
 
 import ${package}.papi.RequestHandler;
-import ${package}.papi.SapiRestClient;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 public class SpringController {
     private static final Logger logger = LoggerFactory.getLogger(SpringController.class);
 
-    private final RequestHandler requestHandler = new RequestHandler(new SapiRestClient());
+    private static RequestHandler requestHandler;
+
+    static void initialise(RequestHandler requestHandler) {
+        SpringController.requestHandler = requestHandler;
+    }
 
     @GetMapping("/get")
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
