@@ -1,6 +1,6 @@
 package $package;
 
-import ${package}.papi.RequestHandler;
+import ${package}.api.RequestHandler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package ${package}.papi;
+package ${package}.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
     This class provides an annotation-independent interface for responding to REST calls.
 */
 public class RequestHandler {
-    private final SapiRestClient sapiRestClient;
+    private final RestClient restClient;
 
-    public RequestHandler(SapiRestClient sapiRestClient) {
-        this.sapiRestClient = sapiRestClient;
+    public RequestHandler(RestClient restClient) {
+        this.restClient = restClient;
     }
 
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {

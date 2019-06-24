@@ -1,7 +1,7 @@
 package $package;
 
-import ${package}.papi.RequestHandler;
-import ${package}.papi.SapiRestClient;
+import ${package}.api.RequestHandler;
+import ${package}.api.RestClient;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -19,7 +19,7 @@ public class SpringbootApplication {
     private static ConfigurableApplicationContext context;
 
     public static void start(String[] args) {
-        SpringController.initialise(new RequestHandler(new SapiRestClient()));
+        SpringController.initialise(new RequestHandler(new RestClient()));
         context = run(SpringbootApplication.class, args);
     }
 
