@@ -63,4 +63,21 @@ All interesting parts of this archetype are stored within
     - See: [Maven Archetype Descriptor](https://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html)
 
 - This archetype is intended to generate enough classes and structure to make it very obvious how to create APIs, while not generating too much and risking infringing
-on the core domain of the APIs it intends to implement.  
+on the core domain of the APIs it intends to implement.
+
+## Troubleshooting
+
+#### Generating too many files/duplicating files/including files that it used to include but I deleted ages ago
+
+- I believe this is a caching issue with the way local archetypes are published.
+
+- I fixed this by specifying explicitly which files to include. You can see this in `src/main/resource/META-INF/maven/archetype-metadata.xml`.
+
+#### After generating the project, IntelliJ can't access java.lang.String
+
+- I found this a couple of times, although it seemed pretty random to me.
+
+- I fixed it by going on project structure (cmd-;) and removing the project SDK(s) then readding whatever was required.
+    - In the project structure dialog box, navigate to Platform Settings -> SDKs in the left panel, then use the '-' button to remove all the
+      SDKs you don't think you need. IntelliJ should prompt you to readd them, or, if it doesn't, you can readd them yourself using the '+'
+      button.  
