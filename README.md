@@ -67,7 +67,7 @@ on the core domain of the APIs it intends to implement.
 
 ## Troubleshooting
 
-#### Generating too many files/duplicating files/including files that it used to include but I deleted ages ago
+#### It generates too many files/duplicated files/files that it used to include but I deleted ages ago
 
 - I believe this is a caching issue with the way local archetypes are published.
 
