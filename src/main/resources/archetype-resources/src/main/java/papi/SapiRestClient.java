@@ -1,4 +1,4 @@
-package $package;
+package ${package}.papi;
 
 /*
     This class contains our implementation of a REST interface with SAPIs.

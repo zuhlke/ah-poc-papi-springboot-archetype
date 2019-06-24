@@ -1,4 +1,4 @@
-package $package;
+package ${package}.papi;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

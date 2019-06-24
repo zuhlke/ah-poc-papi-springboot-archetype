@@ -1,7 +1,7 @@
 package ${package}.unit;
 
-import ${package}.RequestHandler;
-import ${package}.SapiRestClient;
+import ${package}.papi.RequestHandler;
+import ${package}.papi.SapiRestClient;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
