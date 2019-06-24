@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
+/*
+    This class contains the request mappings for the endpoints which are provided by this API.
+*/
 @RestController
 public class SpringController {
     private static final Logger logger = LoggerFactory.getLogger(SpringController.class);
 
-    private final RequestHandler requestHandler = new RequestHandler();
+    private final RequestHandler requestHandler = new RequestHandler(new SapiRestClient());
 
     @GetMapping("/get")
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {

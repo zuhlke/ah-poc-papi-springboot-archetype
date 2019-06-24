@@ -6,7 +6,16 @@ import org.springframework.http.ResponseEntity;
 
 import javax.servlet.http.HttpServletRequest;
 
+/*
+    This class provides an annotation-independent interface for responding to REST calls.
+*/
 public class RequestHandler {
+    private final SapiRestClient sapiRestClient;
+
+    public RequestHandler(SapiRestClient sapiRestClient) {
+        this.sapiRestClient = sapiRestClient;
+    }
+
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
