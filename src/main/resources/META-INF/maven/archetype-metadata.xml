@@ -11,7 +11,11 @@
         <fileSet filtered="true" packaged="true">
             <directory>src/main/java</directory>
             <includes>
-                <include>**/*.java</include>
+                <include>Main.java</include>
+                <include>SpringbootApplication.java</include>
+                <include>SpringController.java</include>
+                <include>papi/RequestHandler.java</include>
+                <include>papi/SapiRestClient.java</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true">
