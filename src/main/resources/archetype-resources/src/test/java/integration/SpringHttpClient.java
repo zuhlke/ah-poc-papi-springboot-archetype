@@ -1,4 +1,4 @@
-package $package;
+package ${package}.integration;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
