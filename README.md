@@ -16,7 +16,7 @@ The script just contains `mvn install`.
 
 ## Generate a new project from this archetype
 
-There is a script `./generate-papi`, which is safe to call from any directory.
+There is a script `./generate-papi`, which is safe to call from any directory. Otherwise, you can use the maven commands below.
 
 #### Generate by using interactive mode (queries for any missing parameters)
 
