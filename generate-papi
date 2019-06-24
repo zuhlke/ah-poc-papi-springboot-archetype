@@ -1,0 +1,22 @@
+if [[ $# != 3 ]]
+then
+  echo "USAGE: $0 <group id> <artifact id> <application name>"
+  exit 1
+fi
+
+group_id=$1
+artifact_id=$2
+application_name=$3
+
+# Convert hyphens to underscores so the group id is a valid package name.
+package_name="${group_id//-/_}"
+
+mvn archetype:generate \
+  -DarchetypeGroupId=com.aimless-hammer \
+  -DarchetypeArtifactId=ah-poc-papi-springboot-archetype \
+  -DarchetypeVersion=0.1 \
+  -DgroupId=$group_id \
+  -DartifactId=$artifact_id \
+  -Dversion=0.0.1 \
+  -Dpackage=$package_name \
+  -Dapp-name=$application_name
