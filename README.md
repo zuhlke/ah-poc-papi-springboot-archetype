@@ -27,7 +27,7 @@ mvn archetype:generate \
 	-DarchetypeVersion=0.1
 ```
 
-#### Generate by passing missing required parameters into archetype generator (leaves `teapot-enabled` to default value `n`)
+#### Generate by passing missing required parameters into archetype generator
 
 ```
 mvn archetype:generate \
