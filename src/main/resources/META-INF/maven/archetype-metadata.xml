@@ -16,6 +16,9 @@
     </fileSet>
     <fileSet filtered="true" packaged="true">
       <directory>src/test/java</directory>
+      <includes>
+          <include>**/*.java</include>
+      </includes>
     </fileSet>
     <fileSet filtered="false">
       <directory>src/main/resources</directory>
