@@ -20,3 +20,7 @@ mvn archetype:generate \
   -Dversion=0.0.1 \
   -Dpackage=$package_name \
   -Dapp-name=$application_name
+
+# Make the scripts executable
+chmod u+x ${artifact_id}/run-tests
+chmod u+x ${artifact_id}/build-jar
