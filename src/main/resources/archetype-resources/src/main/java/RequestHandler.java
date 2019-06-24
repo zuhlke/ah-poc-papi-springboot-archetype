@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 
 import javax.servlet.http.HttpServletRequest;
 
-class RequestHandler {
+public class RequestHandler {
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
