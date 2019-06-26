@@ -39,7 +39,7 @@ public class IntegrationTest {
 
     @Test
     public void getEndpointRespondsToGetRequests() {
-        when(stubRequestHandler.get(any())).thenReturn(ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body("! GET !"));
+        when(stubRequestHandler.get(any())).thenReturn(okResponseWithJsonBody("! GET !"));
 
         assertEquals(
                 "! GET !",
@@ -49,11 +49,15 @@ public class IntegrationTest {
 
     @Test
     public void postEndpointRespondsToPostRequests() {
-        when(stubRequestHandler.post(any())).thenReturn(ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body("! POST !"));
+        when(stubRequestHandler.post(any())).thenReturn(okResponseWithJsonBody("! POST !"));
 
         assertEquals(
                 "! POST !",
                 springHttpClient.post(origin + "/post")
         );
+    }
+
+    private ResponseEntity<String> okResponseWithJsonBody(String body) {
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(body);
     }
 }
