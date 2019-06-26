@@ -95,21 +95,26 @@ Here is the result of `tree example-papi/src/test/java/com/aimless_hammer/`
 Robs-Computer:templating$ tree example-papi/src/test/java/com/aimless_hammer/
 example-papi/src/test/java/com/aimless_hammer/
 ├── integration
-│   ├── IntegrationTest.java
-│   └── SpringHttpClient.java
+│   ├── client
+│   │   ├── RestClientTest.java
+│   │   ├── StubHttpServer.java
+│   │   └── TestJsonBodyType.java
+│   └── server
+│       ├── IntegrationTest.java
+│       └── SpringHttpClient.java
 └── unit
     └── RequestHandlerTest.java
 
-2 directories, 3 files
+4 directories, 6 files
 Robs-Computer:templating$ 
 ```
 ### Supporting files
 
-- Two scripts: `build-jar` and `run-tests`, which do what you might guess.
+- Three scripts: `run-tests`, `start-server` and `build-jar`, which do what you might guess.
 
 - A `README.md` with a lot of blanks.
 
-- A `.gitignore` which ignores `target/` and `.idea/workspace.xml`.
+- A `.gitignore` which ignores `target/` and `.idea/workspace.xml`. (You can add the rest of `.idea/`! It's a great folder!)
 
 ## Troubleshooting
 
