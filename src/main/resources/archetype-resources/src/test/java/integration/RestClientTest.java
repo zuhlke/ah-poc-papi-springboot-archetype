@@ -25,7 +25,7 @@ public class RestClientTest {
     }
 
     @Test
-    public void canDoABlockingGet() throws IOException {
+    public void blockingGetReturnsTheCorrectJson() throws IOException {
         String name = "anna";
         String job = "project manager";
         startStubHttpServer(name, job);
@@ -37,7 +37,7 @@ public class RestClientTest {
     }
 
     @Test
-    public void canDoAReactiveGet() throws IOException {
+    public void reactiveGetReturnsTheCorrectJson() throws IOException {
         String name = "vlad";
         String job = "developer";
         startStubHttpServer(name, job);
