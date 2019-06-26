@@ -1,11 +1,9 @@
 package $package;
 
 import ${package}.api.RequestHandler;
-import ${package}.api.RestClient;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import static org.springframework.boot.SpringApplication.*;
 
@@ -23,8 +21,8 @@ public class SpringbootApplication {
     public static final String LOG_ID = "${app-name}";
     private static ConfigurableApplicationContext context;
 
-    public static void start(String[] args) {
-        SpringController.initialise(new RequestHandler(new RestClient(WebClient.create())));
+    public static void start(String[] args, RequestHandler requestHandler) {
+        SpringController.initialise(requestHandler);
         context = run(SpringbootApplication.class, args);
     }
 
