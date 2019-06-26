@@ -12,6 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class RestClientTest {
     private StubHttpServer stubHttpServer;
+    private final RestClient restClient = new RestClient(WebClient.create());
 
     @After
     public void tearDown() {
@@ -24,28 +25,32 @@ public class RestClientTest {
     @Test
     public void canDoABlockingGet() throws IOException {
         int port = 9090;
-        stubHttpServer = new StubHttpServer(port);
-        stubHttpServer.setResponse("{\"name\": \"anna\", \"job\": \"project manager\"}");
-        stubHttpServer.start();
-        RestClient restClient = new RestClient(WebClient.create());
+        String name = "anna";
+        String job = "project manager";
+        startStubHttpServer(port, name, job);
 
         TestJsonBodyType json = restClient.blockingGet("http://localhost:" + port, TestJsonBodyType.class);
 
-        assertThat(json.name, equalTo("anna"));
-        assertThat(json.job, equalTo("project manager"));
+        assertThat(json.name, equalTo(name));
+        assertThat(json.job, equalTo(job));
     }
 
     @Test
     public void canDoAReactiveGet() throws IOException {
         int port = 9091;
-        stubHttpServer = new StubHttpServer(port);
-        stubHttpServer.setResponse("{\"name\": \"vlad\", \"job\": \"developer\"}");
-        stubHttpServer.start();
-        RestClient restClient = new RestClient(WebClient.create());
+        String name = "vlad";
+        String job = "developer";
+        startStubHttpServer(port, name, job);
 
         TestJsonBodyType json = restClient.reactiveGet("http://localhost:" + port, TestJsonBodyType.class).block();
 
-        assertThat(json.name, equalTo("vlad"));
-        assertThat(json.job, equalTo("developer"));
+        assertThat(json.name, equalTo(name));
+        assertThat(json.job, equalTo(job));
+    }
+
+    private void startStubHttpServer(int port, String name, String job) throws IOException {
+        stubHttpServer = new StubHttpServer(port);
+        stubHttpServer.setResponse("{\"name\": \"" + name + "\", \"job\": \"" + job + "\"}");
+        stubHttpServer.start();
     }
 }
