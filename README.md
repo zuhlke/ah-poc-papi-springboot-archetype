@@ -16,9 +16,9 @@ The script just contains `mvn install`.
 
 ## Generate a new project from this archetype
 
-There is a script `./generate-papi`, which is safe to call from any directory.
+There is a script `./generate-api`, which is safe to call from any directory.
 
-Usage: `./generate-papi <group id> <artifact id> <application name>`
+Usage: `./generate-api <group id> <artifact id> <application name>`
 
 If you don't use the script, you can still use the maven commands below.
 
@@ -71,7 +71,7 @@ on the core domain of the APIs it intends to implement.
 
 ### Java files generated
 
-If I call `./ah-poc-papi-springboot-archetype/generate-papi com.aimless-hammer example-papi ExamplePapi`, I get a folder called `example-papi`.
+If I call `./ah-poc-papi-springboot-archetype/generate-api com.aimless-hammer example-papi ExamplePapi`, I get a folder called `example-papi`.
 
 Here is the result of `tree example-papi/src/main/java/com/aimless_hammer/`
 
