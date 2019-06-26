@@ -40,23 +40,9 @@
             <directory/>
             <includes>
                 <include>README.md</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="false" encoding="UTF-8">
-            <directory/>
-            <includes>
                 <include>.gitignore</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="false" packaged="false" encoding="UTF-8">
-            <directory/>
-            <includes>
+                <include>start-server</include>
                 <include>run-tests</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="false" packaged="false" encoding="UTF-8">
-            <directory/>
-            <includes>
                 <include>build-jar</include>
             </includes>
         </fileSet>

@@ -26,3 +26,4 @@ mvn archetype:generate \
 # Make the scripts executable
 chmod u+x ${artifact_id}/run-tests
 chmod u+x ${artifact_id}/build-jar
+chmod u+x ${artifact_id}/start-server
