@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 
 /*
     This class contains the request mappings for the endpoints which are provided by this API.
+
+    It should delegate its injected RequestHandler, passing down a HttpServletRequest and
+    expecting back a ResponseEntity<String>.
 */
 @RestController
 public class SpringController {
