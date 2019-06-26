@@ -7,14 +7,15 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class RestClientTest {
     private final int port = 9090;
     private StubHttpServer stubHttpServer;
 
-    private RestClient restClient = new RestClient(WebClient.create());
+    private final RestClient restClient = new RestClient(WebClient.create());
 
     @After
     public void tearDown() {
@@ -44,6 +45,7 @@ public class RestClientTest {
 
         TestJsonBodyType json = restClient.reactiveGet("http://localhost:" + port, TestJsonBodyType.class).block();
 
+        assertThat(json, notNullValue());
         assertThat(json.name, equalTo(name));
         assertThat(json.job, equalTo(job));
     }

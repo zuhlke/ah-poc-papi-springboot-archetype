@@ -6,11 +6,11 @@ import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
 import static org.mockito.Mockito.*;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class RequestHandlerTest {
-    private RestClient restClient = mock(RestClient.class);
+    private final RestClient restClient = mock(RestClient.class);
 
     @Test
     public void getReturnsStatusCode200() {
