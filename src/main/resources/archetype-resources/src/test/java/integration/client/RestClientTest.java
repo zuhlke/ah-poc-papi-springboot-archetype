@@ -18,7 +18,7 @@ public class RestClientTest {
     private final RestClient restClient = new RestClient(WebClient.create());
 
     @After
-    public void tearDown() {
+    public void afterEach() {
         if (stubHttpServer != null) {
             stubHttpServer.stop();
             stubHttpServer = null;
