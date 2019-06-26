@@ -21,11 +21,11 @@
         <fileSet filtered="true" packaged="true">
             <directory>src/test/java</directory>
             <includes>
-                <include>integration/IntegrationTest.java</include>
-                <include>integration/SpringHttpClient.java</include>
-                <include>integration/RestClientTest.java</include>
-                <include>integration/StubHttpServer.java</include>
-                <include>integration/TestJsonBodyType.java</include>
+                <include>integration/server/IntegrationTest.java</include>
+                <include>integration/server/SpringHttpClient.java</include>
+                <include>integration/client/RestClientTest.java</include>
+                <include>integration/client/StubHttpServer.java</include>
+                <include>integration/client/TestJsonBodyType.java</include>
                 <include>unit/RequestHandlerTest.java</include>
             </includes>
         </fileSet>
