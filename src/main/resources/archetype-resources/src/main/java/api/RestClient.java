@@ -6,10 +6,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 /*
-    This class contains our implementation of a REST interface with backend systems.
-
-    The implementation should conform to a high standard of the non-functional
-    requirements around performance, security and reliability.
+    This class contains a REST client which can be used to make HTTP requests, both
+    blocking ones and non-blocking (reactive) ones. You need to define the type of the
+    response body you're expecting.
+    There is an example in the integration tests for this class. You can navigate to the
+    tests for this class by using the top menu bar in the IntelliJ IDE : Navigate -> Test.
 */
 public class RestClient {
     private final WebClient webClient;
