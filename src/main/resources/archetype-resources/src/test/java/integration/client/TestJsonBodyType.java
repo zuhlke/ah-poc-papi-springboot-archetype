@@ -1,4 +1,4 @@
-package ${package}.integration;
+package ${package}.integration.client;
 
 @SuppressWarnings("unused")
 public class TestJsonBodyType {

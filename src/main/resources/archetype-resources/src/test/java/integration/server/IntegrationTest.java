@@ -1,4 +1,4 @@
-package ${package}.integration;
+package ${package}.integration.server;
 
 import ${package}.SpringbootApplication;
 import org.junit.After;

@@ -1,4 +1,4 @@
-package ${package}.integration;
+package ${package}.integration.client;
 
 import ${package}.api.RestClient;
 import org.junit.After;

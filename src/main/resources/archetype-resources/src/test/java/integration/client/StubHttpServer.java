@@ -1,4 +1,4 @@
-package ${package}.integration;
+package ${package}.integration.client;
 
 import fi.iki.elonen.NanoHTTPD;
 
