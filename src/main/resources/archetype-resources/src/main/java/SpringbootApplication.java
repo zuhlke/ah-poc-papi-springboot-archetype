@@ -16,7 +16,7 @@ import static org.springframework.boot.SpringApplication.*;
     All the dependencies required to run this spring application can be injected at this level,
     meaning that the whole system can be exercised with any component being stubbed or mocked. The
     effect is that this API is extremely easy to write automated tests for and reason about, which
-    greatly decreases the cost of change.
+    greatly decreases the cost of change and increases the pace of development.
 */
 @SpringBootApplication
 public class SpringbootApplication {
