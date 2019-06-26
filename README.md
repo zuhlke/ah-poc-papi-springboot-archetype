@@ -81,9 +81,9 @@ example-papi/src/main/java/com/aimless_hammer/
 ├── Main.java
 ├── SpringController.java
 ├── SpringbootApplication.java
-└── papi
+└── api
     ├── RequestHandler.java
-    └── SapiRestClient.java
+    └── RestClient.java
 
 1 directory, 5 files
 Robs-Computer:templating$ 
