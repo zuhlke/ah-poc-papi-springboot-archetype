@@ -165,6 +165,7 @@
     clear to users that they can extend this class.
   - Add more methods to the SpringHttpClient, such as sending requests with bodies and
     headers too.
+  - Provide an example usage of the RestClient in the source code.
 
 - Documentation
   - Provide a markdown user guide for the template, which includes code snippets.
