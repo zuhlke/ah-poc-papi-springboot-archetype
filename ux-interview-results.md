@@ -129,3 +129,53 @@
   reactiveGet.
 
 - I call time-up after 2.5 hours.
+
+### Changes to be made
+
+- Comments
+  - Explain the Spring entrypoint in the Main class.
+  - Explain the ConfigurableApplicationContext static field in SpringbootApplication.
+  - Explain the fact that the SpringController should delegate to the RequestHandler.
+    - Explain this both at the top of the class and in the example endpoints.
+  - Hints about useful IntelliJ shortcuts at places in which they may be useful?
+    - cmd-P, cmd-B, ctrl-space, alt-enter, cmd-1, ctrl-shift-f10, shift-f10
+  - Give the name of the test class for each source class.
+  - On each test class to explain what it is testing
+  - On each supporting class in the test source to explain its purpose
+  - In the Main class, perhaps also describe the structure of the repository and the
+    supporting scripts such as how to run all the tests.
+  - In the test classes, to explain the Mockito mocking.
+  - In the supporting test classes to describe ways in which they could be extended.
+
+- Names
+  - Rename the integration test classes
+  - Rename the endpoints' request paths
+  - Rename the SpringController to something that makes it more obvious that this is
+    where the endpoints are defined.
+  - Align the nmes of the http request methods on the SpringHttpClient and the
+    RestClient
+
+- Scripts
+  - Add a script for manually hitting the API using a GET or POST request, including a
+    request body.
+
+- Abstractions
+  - Create an abstraction layer around the HttpServletRequest with methods for obvious
+    things like getting the request url and the request body. Note that it must be
+    clear to users that they can extend this class.
+  - Add more methods to the SpringHttpClient, such as sending requests with bodies and
+    headers too.
+
+- Documentation
+  - Provide a markdown user guide for the template, which includes code snippets.
+
+### Hypothetical ideas
+
+- A walkthrough training guide or tutorial for how to write REST APIs
+  - What is HTTP and how does it work?
+  - What is a REST API?
+  - How does Springboot help you write REST APIs?
+  - How do you write a simple Springboot REST API?
+  - How do you use IntelliJ to help you write Java?
+  - How can you use Google more effectively?
+  - What should I look for solutions I find on the internet?
