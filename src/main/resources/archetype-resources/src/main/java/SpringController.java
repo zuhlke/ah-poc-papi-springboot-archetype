@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /*
     This class contains the request mappings for the endpoints which are provided by this API.
 
-    It should delegate its injected RequestHandler, passing down a HttpServletRequest and
+    It should delegate immediately to its instance of RequestHandler, passing down a HttpServletRequest and
     expecting back a ResponseEntity<String>.
 */
 @RestController
@@ -27,14 +27,18 @@ public class SpringController {
         SpringController.requestHandler = requestHandler;
     }
 
-    @GetMapping("/get")
+    // This method handles an incoming GET request to the path /some-data.
+    // - It is a GET request, because the annotation is GetMapping
+    // - The path is /some-data because the value passed to the annotation is /some-data
+    @GetMapping("/some-data")
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
         logger.info("Received GET request /get");
 
+        // Note that this method logs the request and then immediately delegates to the requestHandler.
         return requestHandler.get(incomingRequest);
     }
 
-    @PostMapping("/post")
+    @PostMapping("/some-data")
     public ResponseEntity<String> post(HttpServletRequest incomingRequest) {
         logger.info("Received POST request /post");
 
