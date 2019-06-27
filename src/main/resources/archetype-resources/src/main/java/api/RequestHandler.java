@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 
     There should be no spring dependency-injection framework-ery in this package. That has been quarantined
     at the top level for reasons described in the comment over the SpringbootApplication class.
+
+    // Try using the top bar: Navigate -> Test
+    TEST CLASS: src/test/java/<your package structure>/unit/RequestHandlerTest.java
 */
 public class RequestHandler {
     private final RestClient restClient;

@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 
     It should delegate immediately to its instance of RequestHandler, passing down a HttpServletRequest and
     expecting back a ResponseEntity<String>.
+
+    TEST CLASS: src/test/java/<your package structure>/integration/server/IntegrationTest.java
 */
 @RestController
 public class SpringController {

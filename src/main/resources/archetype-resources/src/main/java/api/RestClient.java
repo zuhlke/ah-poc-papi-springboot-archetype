@@ -11,6 +11,8 @@ import reactor.core.publisher.Mono;
     response body you're expecting.
     There is an example in the integration tests for this class. You can navigate to the
     tests for this class by using the top menu bar in the IntelliJ IDE : Navigate -> Test.
+
+    TEST CLASS: src/test/java/<your package structure>/integration/client/RestClientTest.java
 */
 public class RestClient {
     private final WebClient webClient;
