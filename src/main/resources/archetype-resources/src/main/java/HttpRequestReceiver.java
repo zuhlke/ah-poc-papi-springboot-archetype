@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
     expecting back a ResponseEntity<String>.
 
     // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
-    TEST CLASS: src/test/java/<your package structure>/integration/server/IntegrationTest.java
+    TEST CLASS: src/test/java/<your package structure>/integration/server/HttpRequestReceiverTest.java
 */
 @RestController
 public class HttpRequestReceiver {

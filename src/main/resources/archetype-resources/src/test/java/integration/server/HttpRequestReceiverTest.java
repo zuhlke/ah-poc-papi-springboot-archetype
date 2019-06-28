@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class IntegrationTest {
+public class HttpRequestReceiverTest {
     private final String origin = "http://localhost:8080";
 
     private final SpringHttpClient springHttpClient = new SpringHttpClient();
