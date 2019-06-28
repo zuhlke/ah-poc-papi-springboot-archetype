@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
     It should delegate immediately to its instance of RequestHandler, passing down a HttpServletRequest and
     expecting back a ResponseEntity<String>.
 
+    // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
     TEST CLASS: src/test/java/<your package structure>/integration/server/IntegrationTest.java
 */
 @RestController
@@ -32,18 +33,24 @@ public class HttpRequestReceiver {
     // This method handles an incoming GET request to the path /some-data.
     // - It is a GET request, because the annotation is GetMapping
     // - The path is /some-data because the value passed to the annotation is /some-data
+    // Look at the tests for this class to see an example.
     @GetMapping("/some-data")
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
         logger.info("Received GET request /some-data");
 
-        // Note that this method logs the request and then immediately delegates to the requestHandler.
+        // Note that this method immediately delegates to its instance of RequestHandler.
         return requestHandler.get(incomingRequest);
     }
 
+    // This method handles an incoming POST request to the path /some-data.
+    // - It is a POST request, because the annotation is PostMapping
+    // - The path is /some-data because the value passed to the annotation is /some-data
+    // Look at the tests for this class to see an example.
     @PostMapping("/some-data")
     public ResponseEntity<String> post(HttpServletRequest incomingRequest) {
         logger.info("Received POST request /some-data");
 
+        // Note that this method immediately delegates to its instance of RequestHandler.
         return requestHandler.post(incomingRequest);
     }
 }

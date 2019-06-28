@@ -12,6 +12,7 @@ import reactor.core.publisher.Mono;
     There is an example in the integration tests for this class. You can navigate to the
     tests for this class by using the top menu bar in the IntelliJ IDE : Navigate -> Test.
 
+    // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
     TEST CLASS: src/test/java/<your package structure>/integration/client/RestClientTest.java
 */
 public class RestClient {
