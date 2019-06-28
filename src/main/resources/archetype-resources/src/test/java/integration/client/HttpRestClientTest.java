@@ -11,6 +11,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.equalTo;
 
+/*
+    This is an integration test against the HttpRestClient.
+
+    It verifies that the HttpRestClient can successfully make HTTP requests to a server.
+
+    For example, in the test "blockingGetReturnsTheCorrectJson", a stub server is created
+    and started for the test, and it is verified that the httpRestClient can make a get
+    request to it and parse the correct json response body.
+*/
 public class HttpRestClientTest {
     private final int port = 9090;
     private StubHttpServer stubHttpServer;

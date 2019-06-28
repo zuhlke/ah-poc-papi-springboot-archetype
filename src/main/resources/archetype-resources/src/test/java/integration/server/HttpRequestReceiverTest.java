@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 import static org.junit.Assert.assertEquals;
 
 /*
-    This class is an integration test against the API.
+    This class is an integration test against the server.
 
     It verifies that the HttpRequestReceiver succesfully receives requests to the expected endpoints and that it
     delegates the creation of its response body to the RequestHandler by calling the appropriate method defined
