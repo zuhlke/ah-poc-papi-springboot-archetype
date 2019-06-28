@@ -13,12 +13,12 @@ import reactor.core.publisher.Mono;
     tests for this class by using the top menu bar in the IntelliJ IDE : Navigate -> Test.
 
     // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
-    TEST CLASS: src/test/java/<your package structure>/integration/client/RestClientTest.java
+    TEST CLASS: src/test/java/<your package structure>/integration/client/HttpRestClientTest.java
 */
-public class RestClient {
+public class HttpRestClient {
     private final WebClient webClient;
 
-    public RestClient(WebClient webClient) {
+    public HttpRestClient(WebClient webClient) {
         this.webClient = webClient;
     }
 

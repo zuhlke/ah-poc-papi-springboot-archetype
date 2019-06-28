@@ -15,15 +15,15 @@
                 <include>SpringbootApplication.java</include>
                 <include>HttpRequestReceiver.java</include>
                 <include>api/RequestHandler.java</include>
-                <include>api/RestClient.java</include>
+                <include>api/HttpRestClient.java</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true">
             <directory>src/test/java</directory>
             <includes>
-                <include>integration/server/IntegrationTest.java</include>
+                <include>integration/server/HttpRequestReceiverTest.java</include>
                 <include>integration/server/SpringHttpClient.java</include>
-                <include>integration/client/RestClientTest.java</include>
+                <include>integration/client/HttpRestClientTest.java</include>
                 <include>integration/client/StubHttpServer.java</include>
                 <include>integration/client/TestJsonBodyType.java</include>
                 <include>unit/RequestHandlerTest.java</include>

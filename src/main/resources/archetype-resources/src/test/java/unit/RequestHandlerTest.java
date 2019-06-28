@@ -1,7 +1,7 @@
 package ${package}.unit;
 
 import ${package}.api.RequestHandler;
-import ${package}.api.RestClient;
+import ${package}.api.HttpRestClient;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
@@ -10,18 +10,18 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class RequestHandlerTest {
-    private final RestClient restClient = mock(RestClient.class);
+    private final HttpRestClient httpRestClient = mock(HttpRestClient.class);
 
     @Test
     public void getReturnsStatusCode200() {
-        RequestHandler requestHandler = new RequestHandler(restClient);
+        RequestHandler requestHandler = new RequestHandler(httpRestClient);
 
         assertThat(requestHandler.getSomeData(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
     }
 
     @Test
     public void postReturnsStatusCode200() {
-        RequestHandler requestHandler = new RequestHandler(restClient);
+        RequestHandler requestHandler = new RequestHandler(httpRestClient);
 
         assertThat(requestHandler.postSomeData(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
     }

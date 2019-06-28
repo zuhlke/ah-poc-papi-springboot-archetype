@@ -23,10 +23,10 @@ import javax.servlet.http.HttpServletRequest;
     TEST CLASS: src/test/java/<your package structure>/unit/RequestHandlerTest.java
 */
 public class RequestHandler {
-    private final RestClient restClient;
+    private final HttpRestClient httpRestClient;
 
-    public RequestHandler(RestClient restClient) {
-        this.restClient = restClient;
+    public RequestHandler(HttpRestClient httpRestClient) {
+        this.httpRestClient = httpRestClient;
     }
 
     public ResponseEntity<String> getSomeData(HttpServletRequest incomingRequest) {

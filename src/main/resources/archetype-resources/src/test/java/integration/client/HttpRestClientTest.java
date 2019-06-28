@@ -1,6 +1,6 @@
 package ${package}.integration.client;
 
-import ${package}.api.RestClient;
+import ${package}.api.HttpRestClient;
 import org.junit.After;
 import org.junit.Test;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,11 +11,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class RestClientTest {
+public class HttpRestClientTest {
     private final int port = 9090;
     private StubHttpServer stubHttpServer;
 
-    private final RestClient restClient = new RestClient(WebClient.create());
+    private final HttpRestClient httpRestClient = new HttpRestClient(WebClient.create());
 
     @After
     public void afterEach() {
@@ -31,7 +31,7 @@ public class RestClientTest {
         String job = "project manager";
         startStubHttpServer(name, job);
 
-        TestJsonBodyType json = restClient.blockingGet("http://localhost:" + port, TestJsonBodyType.class);
+        TestJsonBodyType json = httpRestClient.blockingGet("http://localhost:" + port, TestJsonBodyType.class);
 
         assertThat(json.name, equalTo(name));
         assertThat(json.job, equalTo(job));
@@ -43,7 +43,7 @@ public class RestClientTest {
         String job = "developer";
         startStubHttpServer(name, job);
 
-        TestJsonBodyType json = restClient.reactiveGet("http://localhost:" + port, TestJsonBodyType.class).block();
+        TestJsonBodyType json = httpRestClient.reactiveGet("http://localhost:" + port, TestJsonBodyType.class).block();
 
         assertThat(json, notNullValue());
         assertThat(json.name, equalTo(name));

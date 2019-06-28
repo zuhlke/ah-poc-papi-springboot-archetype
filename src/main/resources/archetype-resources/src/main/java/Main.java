@@ -1,7 +1,7 @@
 package $package;
 
 import ${package}.api.RequestHandler;
-import ${package}.api.RestClient;
+import ${package}.api.HttpRestClient;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /*
@@ -14,7 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
         The Springboot framework uses the Spring framework to automatically route incoming
         HTTP requests into the application at specified points. Those points are the
         _Mappings_ defined within classes annotated with _@RestController_, in this case,
-        our RestController class is called HttpRequestReceiver.
+        our @RestController class is called HttpRequestReceiver.
         _Mappings_ are methods which are annotated with mapping annotations, such as @GetMapping,
         @PostMapping or more generally, @RequestMapping.
 
@@ -44,6 +44,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class Main {
     public static void main(String[] args) {
         // Try "Command-B" with "start" highlighted
-        SpringbootApplication.start(args, new RequestHandler(new RestClient(WebClient.create())));
+        SpringbootApplication.start(args, new RequestHandler(new HttpRestClient(WebClient.create())));
     }
 }
