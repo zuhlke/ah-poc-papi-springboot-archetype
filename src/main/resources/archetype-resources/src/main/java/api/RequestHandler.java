@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import javax.servlet.http.HttpServletRequest;
 
 /*
-    This class provides an annotation-free interface for responding to REST calls. It is called by
-    the SpringController in the top level to handle incoming requests.
+    This class provides an annotation-free interface for responding to REST calls. It is immediately
+    delegated to by the SpringController in the top level to handle incoming requests.
 
     The requests are given as instances of HttpServletRequest, which contains methods for accessing
     all the features of a HTTP request, such as the request url, the request headers and the request body.
