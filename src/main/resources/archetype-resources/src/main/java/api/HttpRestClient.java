@@ -22,6 +22,12 @@ public class HttpRestClient {
         this.webClient = webClient;
     }
 
+    /*
+        Reactive
+
+        This means that this HTTP call will be _non blocking_. This means that it runs
+        asynchronously - it will not block the thread that it runs in. This enables better performance.
+    */
     public <T> Mono<T> reactiveGet(String url, Class<T> bodyType) {
         return webClient.get()
                 .uri(url)
@@ -31,6 +37,13 @@ public class HttpRestClient {
                 .bodyToMono(bodyType);
     }
 
+    /*
+        Blocking
+
+        This means that this HTTP call will be _blocking_. This means that it runs
+        synchronously - it will block the thread that it runs in. Synchronous behaviour
+        is easier to reason about.
+    */
     public <T> T blockingGet(String url, Class<T> bodyType) {
         return reactiveGet(url, bodyType).block();
     }
