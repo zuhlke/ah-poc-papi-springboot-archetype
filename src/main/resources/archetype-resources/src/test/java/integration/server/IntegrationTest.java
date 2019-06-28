@@ -43,7 +43,7 @@ public class IntegrationTest {
 
         assertEquals(
                 "! GET !",
-                springHttpClient.get(origin + "/get")
+                springHttpClient.get(origin + "/some-data")
         );
     }
 
@@ -53,7 +53,7 @@ public class IntegrationTest {
 
         assertEquals(
                 "! POST !",
-                springHttpClient.post(origin + "/post")
+                springHttpClient.post(origin + "/some-data")
         );
     }
 

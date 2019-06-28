@@ -22,7 +22,7 @@ public class SpringbootApplication {
     private static ConfigurableApplicationContext context;
 
     public static void start(String[] args, RequestHandler requestHandler) {
-        SpringController.initialise(requestHandler);
+        HttpRequestReceiver.initialise(requestHandler);
         context = run(SpringbootApplication.class, args);
     }
 

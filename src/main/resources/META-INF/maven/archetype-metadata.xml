@@ -13,7 +13,7 @@
             <includes>
                 <include>Main.java</include>
                 <include>SpringbootApplication.java</include>
-                <include>SpringController.java</include>
+                <include>HttpRequestReceiver.java</include>
                 <include>api/RequestHandler.java</include>
                 <include>api/RestClient.java</include>
             </includes>

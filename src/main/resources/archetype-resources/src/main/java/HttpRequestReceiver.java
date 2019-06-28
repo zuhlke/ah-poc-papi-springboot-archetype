@@ -20,13 +20,13 @@ import javax.servlet.http.HttpServletRequest;
     TEST CLASS: src/test/java/<your package structure>/integration/server/IntegrationTest.java
 */
 @RestController
-public class SpringController {
-    private static final Logger logger = LoggerFactory.getLogger(SpringController.class);
+public class HttpRequestReceiver {
+    private static final Logger logger = LoggerFactory.getLogger(HttpRequestReceiver.class);
 
     private static RequestHandler requestHandler;
 
     static void initialise(RequestHandler requestHandler) {
-        SpringController.requestHandler = requestHandler;
+        HttpRequestReceiver.requestHandler = requestHandler;
     }
 
     // This method handles an incoming GET request to the path /some-data.
@@ -34,7 +34,7 @@ public class SpringController {
     // - The path is /some-data because the value passed to the annotation is /some-data
     @GetMapping("/some-data")
     public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
-        logger.info("Received GET request /get");
+        logger.info("Received GET request /some-data");
 
         // Note that this method logs the request and then immediately delegates to the requestHandler.
         return requestHandler.get(incomingRequest);
@@ -42,7 +42,7 @@ public class SpringController {
 
     @PostMapping("/some-data")
     public ResponseEntity<String> post(HttpServletRequest incomingRequest) {
-        logger.info("Received POST request /post");
+        logger.info("Received POST request /some-data");
 
         return requestHandler.post(incomingRequest);
     }

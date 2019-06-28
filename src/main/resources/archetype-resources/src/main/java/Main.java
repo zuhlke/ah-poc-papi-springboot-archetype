@@ -14,12 +14,12 @@ import org.springframework.web.reactive.function.client.WebClient;
         The Springboot framework uses the Spring framework to automatically route incoming
         HTTP requests into the application at specified points. Those points are the
         _Mappings_ defined within classes annotated with _@RestController_, in this case,
-        our RestController class is called SpringController.
+        our RestController class is called HttpRequestReceiver.
         _Mappings_ are methods which are annotated with mapping annotations, such as @GetMapping,
         @PostMapping or more generally, @RequestMapping.
 
     Where's the entry point to this program?
-        The annotated methods in SpringController are the entry points. Incoming HTTP requests
+        The annotated methods in HttpRequestReceiver are the entry points. Incoming HTTP requests
         are encoded into instances of HttpServletRequest and passed into those methods as
         parameters. The return type of these methods is ResponseEntity<String>, which means
         a HTTP response with the response body given as a string. This return value is then
