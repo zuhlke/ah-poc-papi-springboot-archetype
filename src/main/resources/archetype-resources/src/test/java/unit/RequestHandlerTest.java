@@ -16,13 +16,13 @@ public class RequestHandlerTest {
     public void getReturnsStatusCode200() {
         RequestHandler requestHandler = new RequestHandler(restClient);
 
-        assertThat(requestHandler.get(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
+        assertThat(requestHandler.getSomeData(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
     }
 
     @Test
     public void postReturnsStatusCode200() {
         RequestHandler requestHandler = new RequestHandler(restClient);
 
-        assertThat(requestHandler.post(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
+        assertThat(requestHandler.postSomeData(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
     }
 }

@@ -35,11 +35,11 @@ public class HttpRequestReceiver {
     // - The path is /some-data because the value passed to the annotation is /some-data
     // Look at the tests for this class to see an example.
     @GetMapping("/some-data")
-    public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
+    public ResponseEntity<String> getSomeData(HttpServletRequest incomingRequest) {
         logger.info("Received GET request /some-data");
 
         // Note that this method immediately delegates to its instance of RequestHandler.
-        return requestHandler.get(incomingRequest);
+        return requestHandler.getSomeData(incomingRequest);
     }
 
     // This method handles an incoming POST request to the path /some-data.
@@ -47,10 +47,10 @@ public class HttpRequestReceiver {
     // - The path is /some-data because the value passed to the annotation is /some-data
     // Look at the tests for this class to see an example.
     @PostMapping("/some-data")
-    public ResponseEntity<String> post(HttpServletRequest incomingRequest) {
+    public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) {
         logger.info("Received POST request /some-data");
 
         // Note that this method immediately delegates to its instance of RequestHandler.
-        return requestHandler.post(incomingRequest);
+        return requestHandler.postSomeData(incomingRequest);
     }
 }

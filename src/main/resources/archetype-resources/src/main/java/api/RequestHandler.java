@@ -29,17 +29,17 @@ public class RequestHandler {
         this.restClient = restClient;
     }
 
-    public ResponseEntity<String> get(HttpServletRequest incomingRequest) {
+    public ResponseEntity<String> getSomeData(HttpServletRequest incomingRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body("This is a GET request!");
+                .body("I've got some data!");
     }
 
-    public ResponseEntity<String> post(HttpServletRequest incomingRequest) {
+    public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body("This is a POST request!");
+                .body("I've posted some data!");
     }
 }

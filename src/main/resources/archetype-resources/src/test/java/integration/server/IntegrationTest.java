@@ -39,7 +39,7 @@ public class IntegrationTest {
 
     @Test
     public void getEndpointRespondsToGetRequests() {
-        when(stubRequestHandler.get(any())).thenReturn(okResponseWithJsonBody("! GET !"));
+        when(stubRequestHandler.getSomeData(any())).thenReturn(okResponseWithJsonBody("! GET !"));
 
         assertEquals(
                 "! GET !",
@@ -49,7 +49,7 @@ public class IntegrationTest {
 
     @Test
     public void postEndpointRespondsToPostRequests() {
-        when(stubRequestHandler.post(any())).thenReturn(okResponseWithJsonBody("! POST !"));
+        when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("! POST !"));
 
         assertEquals(
                 "! POST !",
