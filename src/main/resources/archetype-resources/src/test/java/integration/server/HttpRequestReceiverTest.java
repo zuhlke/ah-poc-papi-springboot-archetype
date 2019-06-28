@@ -34,7 +34,7 @@ import static org.junit.Assert.assertEquals;
 public class HttpRequestReceiverTest {
     private final String origin = "http://localhost:8080";
 
-    private final TestHttpClient testHttpClient = new TestHttpClient();
+    private final TestHttpRestClient testHttpRestClient = new TestHttpRestClient();
 
     private final RequestHandler stubRequestHandler = mock(RequestHandler.class);
 
@@ -54,7 +54,7 @@ public class HttpRequestReceiverTest {
 
         assertEquals(
                 "stubbed GET response data",
-                testHttpClient.get(origin + "/some-data")
+                testHttpRestClient.get(origin + "/some-data")
         );
     }
 
@@ -64,7 +64,7 @@ public class HttpRequestReceiverTest {
 
         assertEquals(
                 "stubbed POST response data",
-                testHttpClient.post(origin + "/some-data")
+                testHttpRestClient.post(origin + "/some-data")
         );
     }
 
