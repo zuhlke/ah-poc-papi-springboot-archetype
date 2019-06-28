@@ -18,6 +18,17 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.junit.Assert.assertEquals;
 
+/*
+    This class is an integration test against the API.
+
+    It verifies that the HttpRequestReceiver succesfully receives requests to the expected endpoints and that it
+    delegates the creation of its response body to the RequestHandler by calling the appropriate method defined
+    on the RequestHandler.
+
+    For example, the test "someDataEndpointRespondsToGetRequests" verifies that the /some-data endpoint responds to GET
+    requests, and the response body for the HTTP response is created by the method called "getSomeData" defined on
+    the RequestHandler class.
+*/
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class HttpRequestReceiverTest {
@@ -38,21 +49,21 @@ public class HttpRequestReceiverTest {
     }
 
     @Test
-    public void getEndpointRespondsToGetRequests() {
-        when(stubRequestHandler.getSomeData(any())).thenReturn(okResponseWithJsonBody("mocked GET response data"));
+    public void someDataEndpointRespondsToGetRequests() {
+        when(stubRequestHandler.getSomeData(any())).thenReturn(okResponseWithJsonBody("stubbed GET response data"));
 
         assertEquals(
-                "mocked GET response data",
+                "stubbed GET response data",
                 testHttpClient.get(origin + "/some-data")
         );
     }
 
     @Test
-    public void postEndpointRespondsToPostRequests() {
-        when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("mocked POST response data"));
+    public void someDataEndpointRespondsToPostRequests() {
+        when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("stubbed POST response data"));
 
         assertEquals(
-                "mocked POST response data",
+                "stubbed POST response data",
                 testHttpClient.post(origin + "/some-data")
         );
     }
