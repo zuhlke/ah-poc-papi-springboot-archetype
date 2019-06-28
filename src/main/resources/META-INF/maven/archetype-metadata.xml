@@ -22,7 +22,7 @@
             <directory>src/test/java</directory>
             <includes>
                 <include>integration/server/HttpRequestReceiverTest.java</include>
-                <include>integration/server/SpringHttpClient.java</include>
+                <include>integration/server/TestHttpClient.java</include>
                 <include>integration/client/HttpRestClientTest.java</include>
                 <include>integration/client/StubHttpServer.java</include>
                 <include>integration/client/TestJsonBodyType.java</include>

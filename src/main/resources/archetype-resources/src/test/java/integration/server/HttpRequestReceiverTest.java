@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class HttpRequestReceiverTest {
     private final String origin = "http://localhost:8080";
 
-    private final SpringHttpClient springHttpClient = new SpringHttpClient();
+    private final TestHttpClient testHttpClient = new TestHttpClient();
 
     private final RequestHandler stubRequestHandler = mock(RequestHandler.class);
 
@@ -43,7 +43,7 @@ public class HttpRequestReceiverTest {
 
         assertEquals(
                 "mocked GET response data",
-                springHttpClient.get(origin + "/some-data")
+                testHttpClient.get(origin + "/some-data")
         );
     }
 
@@ -53,7 +53,7 @@ public class HttpRequestReceiverTest {
 
         assertEquals(
                 "mocked POST response data",
-                springHttpClient.post(origin + "/some-data")
+                testHttpClient.post(origin + "/some-data")
         );
     }
 

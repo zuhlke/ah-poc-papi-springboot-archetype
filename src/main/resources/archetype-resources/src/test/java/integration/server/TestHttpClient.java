@@ -6,7 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-public class SpringHttpClient {
+public class TestHttpClient {
     private final Class<String> STRING_RESPONSE_TYPE = String.class;
     private final RestTemplate restTemplate = createSpringRestTemplate();
 
