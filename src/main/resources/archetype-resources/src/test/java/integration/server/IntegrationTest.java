@@ -39,20 +39,20 @@ public class IntegrationTest {
 
     @Test
     public void getEndpointRespondsToGetRequests() {
-        when(stubRequestHandler.getSomeData(any())).thenReturn(okResponseWithJsonBody("! GET !"));
+        when(stubRequestHandler.getSomeData(any())).thenReturn(okResponseWithJsonBody("mocked GET response data"));
 
         assertEquals(
-                "! GET !",
+                "mocked GET response data",
                 springHttpClient.get(origin + "/some-data")
         );
     }
 
     @Test
     public void postEndpointRespondsToPostRequests() {
-        when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("! POST !"));
+        when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("mocked POST response data"));
 
         assertEquals(
-                "! POST !",
+                "mocked POST response data",
                 springHttpClient.post(origin + "/some-data")
         );
     }
