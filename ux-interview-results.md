@@ -152,8 +152,10 @@
   - Rename the endpoints' request paths
   - Rename the SpringController to something that makes it more obvious that this is
     where the endpoints are defined.
-  - Align the nmes of the http request methods on the SpringHttpClient and the
+  - Align the names of the http request methods on the SpringHttpClient and the
     RestClient
+  - Rename the RestClient to be more similar to the name of the SpringHttpClient
+  - Make it clear that the SpringHttpClient is for testing
 
 - Scripts
   - Add a script for manually hitting the API using a GET or POST request, including a
