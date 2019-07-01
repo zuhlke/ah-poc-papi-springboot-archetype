@@ -22,6 +22,14 @@ public class HttpRestClient {
         this.webClient = webClient;
     }
 
+    public <T> Mono<T> get(String url, Class<T> bodyType) {
+        return reactiveGet(url, bodyType);
+    }
+
+    public <T> Mono<T> post(String url, Class<T> bodyType) {
+        return reactivePost(url, bodyType);
+    }
+
     /*
         Reactive
 
