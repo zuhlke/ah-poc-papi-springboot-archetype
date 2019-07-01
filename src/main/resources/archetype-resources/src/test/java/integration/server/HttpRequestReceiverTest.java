@@ -48,6 +48,19 @@ public class HttpRequestReceiverTest {
         SpringbootApplication.stop(0);
     }
 
+    /*
+        This test verifies that for the GET endpoint, /some-data, the response body returned by
+        the server is the same as the response body returned by the RequestHandler injected into
+        the server at startup time.
+
+        In this test, there is a stub implementation of the RequestHandler object.
+        Its 'getSomeData()' method is stubbed to always return a HTTP response with status
+        code 200 (OK) and the response body "stubbed GET response data".
+
+        We use the TestHttpRestClient instance to make a HTTP GET request to the server at the
+        endpoint /some-data. We verify that the response body is equal to the response body returned
+        by the stub.
+    */
     @Test
     public void someDataEndpointRespondsToGetRequests() {
         when(stubRequestHandler.getSomeData(any())).thenReturn(okResponseWithJsonBody("stubbed GET response data"));
@@ -58,6 +71,19 @@ public class HttpRequestReceiverTest {
         );
     }
 
+    /*
+        This test verifies that for the POST endpoint, /some-data, the response body returned by
+        the server is the same as the response body returned by the RequestHandler injected into
+        the server at startup time.
+
+        In this test, there is a stub implementation of the RequestHandler object.
+        Its 'postSomeData()' method is stubbed to always return a HTTP response with status
+        code 200 (OK) and the response body "stubbed POST response data".
+
+        We use the TestHttpRestClient instance to make a HTTP POST request to the server at the
+        endpoint /some-data. We verify that the response body is equal to the response body returned
+        by the stub.
+    */
     @Test
     public void someDataEndpointRespondsToPostRequests() {
         when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("stubbed POST response data"));
