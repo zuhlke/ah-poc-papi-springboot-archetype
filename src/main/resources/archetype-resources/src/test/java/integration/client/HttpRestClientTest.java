@@ -1,4 +1,6 @@
-package $
+package ${package}.integration.client;
+
+import ${package}.api.HttpRestClient;
 
 import org.junit.After;
 import org.junit.Test;
@@ -9,9 +11,6 @@ import java.io.IOException;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-
-{package}.integration.client;
-        {package}.api.HttpRestClient;
 
 /*
     This is an integration test against the HttpRestClient.
