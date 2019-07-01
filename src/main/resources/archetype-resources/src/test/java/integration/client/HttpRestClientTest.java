@@ -20,6 +20,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
     For example, in the test "blockingGetReturnsTheCorrectJson", a stub server is created
     and started for the test, and it is verified that the httpRestClient can make a get
     request to it and parse the correct json response body.
+
+    Put your cursor over the name of the test class, "HttpRestClientTest", and press "alt-enter". Run the tests.
 */
 public class HttpRestClientTest {
     private final int port = 9090;

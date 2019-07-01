@@ -28,6 +28,8 @@ import static org.junit.Assert.assertEquals;
     For example, the test "someDataEndpointRespondsToGetRequests" verifies that the /some-data endpoint responds to GET
     requests, and the response body for the HTTP response is created by the method called "getSomeData" defined on
     the RequestHandler class.
+
+    Put your cursor over the name of the test class, "HttpRequestReceiverTest", and press "alt-enter". Run the tests.
 */
 @RunWith(SpringRunner.class)
 @SpringBootTest
