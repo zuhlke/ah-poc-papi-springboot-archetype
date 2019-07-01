@@ -1,15 +1,17 @@
-package ${package}.integration.client;
+package $
 
-import ${package}.api.HttpRestClient;
 import org.junit.After;
 import org.junit.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+{package}.integration.client;
+        {package}.api.HttpRestClient;
 
 /*
     This is an integration test against the HttpRestClient.
@@ -22,9 +24,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 */
 public class HttpRestClientTest {
     private final int port = 9090;
-    private StubHttpServer stubHttpServer;
-
     private final HttpRestClient httpRestClient = new HttpRestClient(WebClient.create());
+    private StubHttpServer stubHttpServer;
 
     @After
     public void afterEach() {
@@ -34,6 +35,17 @@ public class HttpRestClientTest {
         }
     }
 
+    /*
+        This test verifies that the HttpRestClient can be used to make a HTTP GET request and parse the
+        response body from json into an instance of a supplied class.
+
+        A stub http server is started in this test, using the method 'startStubHttpServer'. This server
+        returns some json in the response body.
+
+        To pass the test then, the HttpRestClient must correctly make the request and parse the response
+        json into an instance of the supplied class. It uses the blocking implementation of the
+        HttpRestClient's HTTP GET functionality. There is more on this in the class itself.
+    */
     @Test
     public void blockingGetReturnsTheCorrectJson() throws IOException {
         String name = "anna";
@@ -46,6 +58,10 @@ public class HttpRestClientTest {
         assertThat(json.job, equalTo(job));
     }
 
+    /*
+        This test is the same as the above test, but it uses the non-blocking implementation of the
+        HttpRestClient's HTTP GET functionality. There is more on this in the class itself.
+    */
     @Test
     public void reactiveGetReturnsTheCorrectJson() throws IOException {
         String name = "vlad";
