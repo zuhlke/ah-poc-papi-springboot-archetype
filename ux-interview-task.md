@@ -4,17 +4,17 @@
 
 - They want a `POST` resource at the url path `/activate-credit-card`.
 
-- They will pass json in the format for example `{"credit-card-number": "1234 5678 9101 1213"}` in the request body (including the
+- They will pass json in the format like `{"credit-card-number": "1234 5678 9101 1213"}` in the request body (including the
   spaces between the numbers).
 
 - They need you to send a `POST` request with the last 5 digits of the card in the request body to a backend API that hasn't even
   been written yet!
   - They know that the request url will be `http://bank.apis.creditcardactivation/lastfive` and that the json
-    format you will need to provide in the request body will be for example `{"lastfive": "11213"}`.
-  - The response from this backend service will be json in the format for example `{"activation-token": "YFam2FvBp9gt"}` and
+    format you will need to provide in the request body will be like `{"lastfive": "11213"}`.
+  - The response from this backend service will be json in a format like `{"activation-token": "YFam2FvBp9gt"}` and
     status code 200.
-  - Having got this token, you need to return it back to your client in a response with a json response body of the format for
-    example `{"token": "ACTIVATION-YFam2FvBp9gt"}`. The status code you return should be 201.
+  - Having got this token, you need to prepend the string "ACTIVATION" and return it back to your client in a response with a response
+    body of json format like `{"token": "ACTIVATION-YFam2FvBp9gt"}`. The status code you return should be 201.
 
 ### Here is an example of how it should work.
 
