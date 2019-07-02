@@ -39,7 +39,7 @@
         <fileSet filtered="true" packaged="false" encoding="UTF-8">
             <directory/>
             <includes>
-                <include>README-template.md</include>
+                <include>API-README.md</include>
                 <include>README.md</include>
                 <include>.gitignore</include>
                 <include>start-server</include>
