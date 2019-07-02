@@ -18,10 +18,10 @@ public class SpringbootApplication {
     public static final String LOG_ID = "${app-name}";
 
     // We use this field in order to be able to start and stop the Springboot application.
-    // Try "Command-B" with "context" highlighted
     private static ConfigurableApplicationContext context;
 
     public static void start(String[] args, RequestHandler requestHandler) {
+        // Try "Command-B" with "initialise" highlighted
         HttpRequestReceiver.initialise(requestHandler);
         context = run(SpringbootApplication.class, args);
     }
