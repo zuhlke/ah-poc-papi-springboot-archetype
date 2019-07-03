@@ -182,9 +182,6 @@
 - Fill in the PAPI Core Product README with detailed information about how to develop and API using
   this template.
 
-- Build an example "real" API using the template and refer to it in documentation. Also include a
-  description of the API in a task format which refers to details like classes and methods.
-
 - Point them towards the documentation for the PAPI Core Product at the start.
 
 - Have a comment in the mapping methods that effectively says "Don't put any more code in this method"
@@ -192,3 +189,8 @@
   
 - Include a method for extracting the body of the HttpServletRequest in the HttpRequestReceiver or the
   RequestHandler.
+  
+### Hypothetical ideas
+
+- Build an example "real" API using the template and refer to it in documentation. Also include a
+  description of the API in a task format which refers to details like classes and methods.
