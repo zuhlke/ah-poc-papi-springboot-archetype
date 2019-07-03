@@ -38,7 +38,7 @@
   
 ### Exercise notes
 
-- You are not being tested. This template is being tested. You are facilitating that test. (Thank you!)
+- **You are not being tested.** **This template is being tested.** You are facilitating that test, thank you for your help!
 
 - You should consider this to be your API. You own all of the code here and in this scenario you're responsible for getting it
   working by any means.
