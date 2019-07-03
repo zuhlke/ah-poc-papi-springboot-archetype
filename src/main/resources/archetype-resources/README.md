@@ -28,7 +28,7 @@ $H What should I do?
 
 $H What is the most effective way for me to use this?
 
-- **A fairly small amount of knowledge will take a very, very long way:**
+- **A fairly small amount of knowledge will take you a very, very long way:**
   - Understand the basics of HTTP and how computers use it to communicate over a network.
   - Understand how the Java object oriented programming language works and the associated jargon. Can you
     explain to yourself, in your own words, the difference between a class and an instance? How about a
@@ -59,7 +59,7 @@ HTTP requests - this is the essential technical functionality of a REST API.
   response to the provided static instance of RequestHandler.  
   
 - The RequestHandler is a class which provides the outermost internal layer of your API. It interacts with
-  the raw, wild, brutal HttpRequetReceiver, providing an abstraction layer behind which your domain logic can
+  the raw, wild, brutal HttpRequestReceiver, providing an abstraction layer behind which your domain logic can
   grow and prosper :). I recommend that you use this class to extract the appropriate domain-specific data
   and pass it down to a lower layer of the API for domain-specific processing i.e. "business logic". It
   should then receive data back from the domain-specific layer and interpret it in the technical context
