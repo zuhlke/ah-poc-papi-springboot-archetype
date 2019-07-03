@@ -39,8 +39,8 @@ public class HttpRequestReceiver {
     @GetMapping("/some-data")
     public ResponseEntity<String> getSomeData(HttpServletRequest incomingRequest) {
         logger.info("Received GET request /some-data");
-
-        // Note that this method immediately delegates to its instance of RequestHandler.
+        // You should not be writing any code here.
+        // Notice how this method _immediately_ delegates to its static instance of RequestHandler.
         return requestHandler.getSomeData(incomingRequest);
     }
 
@@ -51,8 +51,8 @@ public class HttpRequestReceiver {
     @PostMapping("/some-data")
     public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) {
         logger.info("Received POST request /some-data");
-
-        // Note that this method immediately delegates to its instance of RequestHandler.
+        // You should not be writing any code here.
+        // Notice how this method _immediately_ delegates to its static instance of RequestHandler.
         return requestHandler.postSomeData(incomingRequest);
     }
 }
