@@ -17,6 +17,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
     RequestHandler using Mockito. It's job is to verify that instances of the
     RequestHandler class behave correctly, for example, that the getSomeData(...)
     method returns a HTTP response which status code 200.
+
+    Put your cursor over the name of the test class, "HttpRequestReceiverTest", and press "alt-enter". Run the tests.
 */
 public class RequestHandlerTest {
     private final HttpRestClient httpRestClient = mock(HttpRestClient.class);
