@@ -1,7 +1,9 @@
 package ${package}.api;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -26,8 +28,16 @@ public class HttpRestClient {
         return reactiveGet(url, bodyType);
     }
 
+    public <T> Mono<T> get(String url, String requestBody, Class<T> responseBodyType) {
+        return reactiveGet(url, requestBody, responseBodyType);
+    }
+
     public <T> Mono<T> post(String url, Class<T> bodyType) {
         return reactivePost(url, bodyType);
+    }
+
+    public <T> Mono<T> post(String url, String requestBody, Class<T> responseBodyType) {
+        return reactivePost(url, requestBody, responseBodyType);
     }
 
     /*
@@ -36,13 +46,45 @@ public class HttpRestClient {
         This means that this HTTP call will be _non blocking_. This means that it runs
         asynchronously - it will not block the thread that it runs in. This enables better performance.
     */
-    public <T> Mono<T> reactiveGet(String url, Class<T> bodyType) {
-        return webClient.get()
+    public <T> Mono<T> reactiveGet(String url, Class<T> responseBodyType) {
+        return webClient.method(HttpMethod.GET)
+                .uri(url)
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .onStatus(HttpStatus::isError, response -> Mono.error(new Exception("Request 'GET " + url + "' gave response with status code" + response.statusCode().value())))
+                .bodyToMono(responseBodyType);
+    }
+
+    private <T> Mono<T> reactiveGet(String url, String requestBody, Class<T> responseBodyType) {
+        return webClient.method(HttpMethod.GET)
+                .uri(url)
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromObject(requestBody))
+                .retrieve()
+                .onStatus(HttpStatus::isError, response -> Mono.error(new Exception("Request 'GET " + url + "' gave response with status code" + response.statusCode().value())))
+                .bodyToMono(responseBodyType);
+    }
+
+    public <T> Mono<T> reactivePost(String url, Class<T> responseBodyType) {
+        return webClient.post()
                 .uri(url)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
-                .onStatus(HttpStatus::isError, response -> Mono.error(new Exception("Request 'GET " + url + "' gave response with status code" + response.statusCode().value())))
-                .bodyToMono(bodyType);
+                .onStatus(HttpStatus::isError, response -> Mono.error(new Exception("Request 'POST " + url + "' gave response with status code" + response.statusCode().value())))
+                .bodyToMono(responseBodyType);
+    }
+
+    private <T> Mono<T> reactivePost(String url, String requestBody, Class<T> responseBodyType) {
+        return webClient.method(HttpMethod.POST)
+                .uri(url)
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromObject(requestBody))
+                .retrieve()
+                .onStatus(HttpStatus::isError, response -> Mono.error(new Exception("Request 'POST " + url + "' gave response with status code" + response.statusCode().value())))
+                .bodyToMono(responseBodyType);
     }
 
     /*
@@ -52,20 +94,19 @@ public class HttpRestClient {
         synchronously - it will block the thread that it runs in. Synchronous behaviour
         is easier to reason about.
     */
-    public <T> T blockingGet(String url, Class<T> bodyType) {
-        return reactiveGet(url, bodyType).block();
+    public <T> T blockingGet(String url, Class<T> responseBodyType) {
+        return reactiveGet(url, responseBodyType).block();
     }
 
-    public <T> Mono<T> reactivePost(String url, Class<T> bodyType) {
-        return webClient.post()
-                .uri(url)
-                .accept(MediaType.APPLICATION_JSON)
-                .retrieve()
-                .onStatus(HttpStatus::isError, response -> Mono.error(new Exception("Request 'GET " + url + "' gave response with status code" + response.statusCode().value())))
-                .bodyToMono(bodyType);
+    public <T> T blockingGet(String url, String requestBody, Class<T> responseBodyType) {
+        return reactiveGet(url, requestBody, responseBodyType).block();
     }
 
-    public <T> T blockingPost(String url, Class<T> bodyType) {
-        return reactivePost(url, bodyType).block();
+    public <T> T blockingPost(String url, Class<T> responseBodyType) {
+        return reactivePost(url, responseBodyType).block();
+    }
+
+    public <T> T blockingPost(String url, String requestBody, Class<T> responseBodyType) {
+        return reactivePost(url, requestBody, responseBodyType).block();
     }
 }

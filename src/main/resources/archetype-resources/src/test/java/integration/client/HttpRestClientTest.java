@@ -76,6 +76,18 @@ public class HttpRestClientTest {
         assertThat(json.job, equalTo(job));
     }
 
+    @Test
+    public void canSendARequestBodyWhenMakingAGetRequest() throws IOException {
+        String name = "lynne";
+        String job = "hcu";
+        startStubHttpServer(name, job);
+
+        String requestBody = "{\"json-key\": \"json-value\"}";
+        httpRestClient.get("http://localhost:" + port, requestBody, TestJsonBodyType.class).block();
+
+        assertThat(stubHttpServer.lastSentRequestBody(), equalTo(requestBody));
+    }
+
     private void startStubHttpServer(String name, String job) throws IOException {
         stubHttpServer = new StubHttpServer(port);
         stubHttpServer.setResponse("{\"name\": \"" + name + "\", \"job\": \"" + job + "\"}");
