@@ -4,6 +4,8 @@ import org.springframework.http.HttpMethod;
 import reactor.core.publisher.Mono;
 
 /*
+    Go to the tests: run, read and understand them right now, if you haven't already.
+
     This class contains a REST client which can be used to make HTTP requests, both
     blocking ones and non-blocking (reactive) ones. You need to define the type of the
     response body you're expecting as a class whose public fields are the json keys

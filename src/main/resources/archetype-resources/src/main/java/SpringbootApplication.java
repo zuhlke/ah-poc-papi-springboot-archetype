@@ -8,6 +8,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import static org.springframework.boot.SpringApplication.*;
 
 /*
+    Go to the tests: run, read and understand them right now, if you haven't already.
+
     This class contains the Spring entry point of the API. The static methods `start` and `stop`
     can be used to easily control the program's top-level functionality, for example, in
     integration tests.

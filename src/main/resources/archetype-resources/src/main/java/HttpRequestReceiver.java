@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 /*
+    Go to the tests: run, read and understand them right now, if you haven't already.
+
     This class contains the request mappings for the endpoints which are provided by this API.
 
     It should delegate immediately to its instance of RequestHandler, passing down a HttpServletRequest and

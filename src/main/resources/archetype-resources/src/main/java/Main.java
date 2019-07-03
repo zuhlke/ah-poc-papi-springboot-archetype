@@ -6,6 +6,8 @@ import ${package}.api.ReactiveRestClient;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /*
+    Go to the tests: run, read and understand them right now, if you haven't already.
+
     What is this class?
         This is the entry point of the program. It is called Main because the first thing
         you learn in Java is that `Main` is the entry point.
