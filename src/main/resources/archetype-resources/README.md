@@ -68,7 +68,3 @@ HTTP requests - this is the essential technical functionality of a REST API.
 - The HttpRestClient is a class which is unused in the template. It's purpose is to provide an abstraction
   layer for making HTTP requests. Consider the abstraction layer within your design at which you would like
   to make HTTP requests, and make them there.
-  
-#### Tests
-
-For your sake, write them and run them.
