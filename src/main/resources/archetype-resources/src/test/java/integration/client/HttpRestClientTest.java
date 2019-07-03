@@ -1,6 +1,7 @@
 package ${package}.integration.client;
 
 import ${package}.api.HttpRestClient;
+import ${package}.api.ReactiveRestClient;
 
 import org.junit.After;
 import org.junit.Test;
@@ -25,7 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 */
 public class HttpRestClientTest {
     private final int port = 9090;
-    private final HttpRestClient httpRestClient = new HttpRestClient(WebClient.create());
+    private final HttpRestClient httpRestClient = new HttpRestClient(new ReactiveRestClient(WebClient.create()));
     private StubHttpServer stubHttpServer;
 
     @After

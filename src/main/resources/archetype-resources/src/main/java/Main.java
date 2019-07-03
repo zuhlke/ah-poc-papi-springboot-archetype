@@ -2,6 +2,7 @@ package $package;
 
 import ${package}.api.RequestHandler;
 import ${package}.api.HttpRestClient;
+import ${package}.api.ReactiveRestClient;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /*
@@ -45,6 +46,6 @@ public class Main {
     // Put your cursor at the end of the line below, just after the '{' and press "alt-enter". Run the program.
     public static void main(String[] args) {
         // Try "Command-B" with "start" highlighted
-        SpringbootApplication.start(args, new RequestHandler(new HttpRestClient(WebClient.create())));
+        SpringbootApplication.start(args, new RequestHandler(new HttpRestClient(new ReactiveRestClient(WebClient.create()))));
     }
 }

@@ -4,7 +4,7 @@
                       name="${artifactId}">
 
     <requiredProperties>
-        <requiredProperty key="app-name"></requiredProperty>
+        <requiredProperty key="app-name"/>
     </requiredProperties>
 
     <fileSets>
@@ -16,6 +16,7 @@
                 <include>HttpRequestReceiver.java</include>
                 <include>api/RequestHandler.java</include>
                 <include>api/HttpRestClient.java</include>
+                <include>api/ReactiveRestClient.java</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true">
