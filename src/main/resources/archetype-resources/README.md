@@ -20,8 +20,9 @@ $H What should I do?
 
 - You should look at the files in this repository and make yourself feel at home in it.
 
-- You should run `git init` and add and commit everything that appears. An appropriate `.gitignore`
-  has been generated.
+- You should run `git init` and add and commit everything that appears. Yes, even .idea and
+  ${artifact-id}.iml, which can be used to standardise the development environment for your team. An
+  appropriate `.gitignore` has been generated.
 
 - After you have run the tests, you should read them and make yourself happy with the tiny amount of
   behaviour that is provided to you by this template.
