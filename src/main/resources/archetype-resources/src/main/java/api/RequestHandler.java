@@ -5,6 +5,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.stream.Collectors;
 
 /*
     Go to the tests: run, read and understand them right now, if you haven't already.
@@ -38,10 +40,15 @@ public class RequestHandler {
                 .body("I've got some data!");
     }
 
-    public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) {
+    public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) throws IOException {
+        String requestBody = extractRequestBody(incomingRequest);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body("I've posted some data!");
+                .body("I've posted some data: " + requestBody + "!");
+    }
+
+    private String extractRequestBody(HttpServletRequest request) throws IOException {
+        return request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
     }
 }

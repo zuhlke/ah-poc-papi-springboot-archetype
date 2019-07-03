@@ -4,6 +4,9 @@ import ${package}.api.RequestHandler;
 import ${package}.api.HttpRestClient;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockServletContext;
+
+import java.io.IOException;
 
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.assertThat;
@@ -26,9 +29,20 @@ public class RequestHandlerTest {
     }
 
     @Test
-    public void postSomeDataReturnsStatusCode200() {
+    public void postSomeDataReturnsStatusCode200() throws IOException {
+        MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
+        mockHttpServletRequest.setContent("hello".getBytes());
         RequestHandler requestHandler = new RequestHandler(httpRestClient);
 
-        assertThat(requestHandler.postSomeData(new MockHttpServletRequest()).getStatusCodeValue(), equalTo(200));
+        assertThat(requestHandler.postSomeData(mockHttpServletRequest).getStatusCodeValue(), equalTo(200));
+    }
+
+    @Test
+    public void postSomeDataEchosTheSentData() throws IOException {
+        MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
+        mockHttpServletRequest.setContent("hello".getBytes());
+        RequestHandler requestHandler = new RequestHandler(httpRestClient);
+
+        assertThat(requestHandler.postSomeData(mockHttpServletRequest).getBody(), equalTo("I've posted some data: hello!"));
     }
 }

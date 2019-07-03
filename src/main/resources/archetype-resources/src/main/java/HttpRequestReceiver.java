@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.io.IOException;
+
 /*
     Go to the tests: run, read and understand them right now, if you haven't already.
 
@@ -49,7 +51,7 @@ public class HttpRequestReceiver {
     // - The path is /some-data because the value passed to the annotation is /some-data
     // Look at the tests for this class to see an example.
     @PostMapping("/some-data")
-    public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) {
+    public ResponseEntity<String> postSomeData(HttpServletRequest incomingRequest) throws IOException {
         logger.info("Received POST request /some-data");
         // You should not be writing any code here.
         // Notice how this method _immediately_ delegates to its static instance of RequestHandler.

@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import java.io.IOException;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -87,7 +89,7 @@ public class HttpRequestReceiverTest {
         by the stub.
     */
     @Test
-    public void someDataEndpointRespondsToPostRequests() {
+    public void someDataEndpointRespondsToPostRequests() throws IOException {
         when(stubRequestHandler.postSomeData(any())).thenReturn(okResponseWithJsonBody("stubbed POST response data"));
 
         assertEquals(
