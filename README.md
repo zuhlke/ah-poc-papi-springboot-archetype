@@ -20,6 +20,8 @@ There is a script `./generate-api`, which is safe to call from any directory.
 
 Usage: `./generate-api <group id> <artifact id> <application name>`
 
+For example: `./generate-api com.bank activate-credit-card ActivateCreditCard`
+
 If you don't use the script, you can still use the maven commands below.
 
 #### Generate by using interactive mode (queries for any missing parameters)
