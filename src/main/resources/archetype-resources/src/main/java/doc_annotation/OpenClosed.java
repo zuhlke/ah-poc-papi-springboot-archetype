@@ -12,7 +12,6 @@ package ${package}.doc_annotation;
  * new methods, fields etc.
  * <br/>
  * You should NOT MODIFY the existing methods, fields etc.
- *
  */
 public @interface OpenClosed {
 }

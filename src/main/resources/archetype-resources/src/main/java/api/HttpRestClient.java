@@ -3,19 +3,14 @@ package ${package}.api;
 import org.springframework.http.HttpMethod;
 import reactor.core.publisher.Mono;
 
-/*
-    Go to the tests for _this_ class: run, read and understand them right now, if you haven't already.
-
-    This class contains a REST client which can be used to make HTTP requests, both
-    blocking ones and non-blocking (reactive) ones. You need to define the type of the
-    response body you're expecting as a class whose public fields are the json keys
-    you're expecting to receive from the server.
-    There is an example in the integration tests for this class. You can navigate to the
-    tests for this class by using the top menu bar in the IntelliJ IDE : Navigate -> Test.
-
-    // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
-    TEST CLASS: src/test/java/<your package structure>/integration/client/HttpRestClientTest.java
-*/
+/**
+ * This class contains a REST client which can be used to make HTTP requests, both
+ * blocking ones and non-blocking (reactive) ones. You need to define the type of the
+ * response body you're expecting as a class whose public fields are the json keys
+ * you're expecting to receive from the server.
+ * <br/>
+ * There is an example in the integration tests for this class.
+ */
 public class HttpRestClient {
     private final ReactiveRestClient reactiveRestClient;
 

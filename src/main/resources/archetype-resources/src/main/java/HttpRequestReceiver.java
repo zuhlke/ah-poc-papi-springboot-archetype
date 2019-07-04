@@ -14,17 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import java.io.IOException;
 
-/*
-    Go to the tests for _this_ class: run, read and understand them right now, if you haven't already.
-
-    This class contains the request mappings for the endpoints which are provided by this API.
-
-    It should delegate immediately to its instance of RequestHandler, passing down a HttpServletRequest and
-    expecting back a ResponseEntity<String>.
-
-    // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
-    TEST CLASS: src/test/java/<your package structure>/integration/server/HttpRequestReceiverTest.java
-*/
+/**
+ * This class contains the request mappings for the endpoints which are provided by this API.
+ * <br/>
+ * It should delegate immediately to its instance of RequestHandler, passing down a HttpServletRequest and
+ * expecting back a ResponseEntity<String>.
+ */
 @OpenClosed
 @RestController
 public class HttpRequestReceiver {

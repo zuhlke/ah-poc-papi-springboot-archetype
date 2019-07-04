@@ -10,12 +10,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Function;
 
-/*
-    Go to the tests: run, read and understand them right now, if you haven't already.
-
-    This class contains the implementation of the reactive rest client, which uses the Spring WebFlux library's
-    WebClient class to make non-blocking HTTP requests. It is used by the HttpRestClient to make HTTP calls.
-*/
+/**
+ * This class contains the implementation of the reactive rest client, which uses the Spring WebFlux library's
+ * WebClient class to make non-blocking HTTP requests. It is used by the HttpRestClient to make HTTP calls.
+ */
 public class ReactiveRestClient {
     private final WebClient webClient;
 
