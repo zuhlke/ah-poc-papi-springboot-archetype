@@ -1,5 +1,7 @@
 package ${package}.api;
 
+import ${package}.doc_annotation.OpenClosed;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,7 @@ import java.util.stream.Collectors;
     // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
     TEST CLASS: src/test/java/<your package structure>/unit/RequestHandlerTest.java
 */
+@OpenClosed
 public class RequestHandler {
     private final HttpRestClient httpRestClient;
 
