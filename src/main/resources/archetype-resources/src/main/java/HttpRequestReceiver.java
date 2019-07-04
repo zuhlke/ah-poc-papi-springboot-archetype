@@ -1,6 +1,7 @@
 package $package;
 
 import ${package}.api.RequestHandler;
+import ${package}.doc_annotation.OpenClosed;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,7 @@ import java.io.IOException;
     // Try "Command-Shift-T" or use IntelliJ's top menu bar: Navigate -> Test
     TEST CLASS: src/test/java/<your package structure>/integration/server/HttpRequestReceiverTest.java
 */
+@OpenClosed
 @RestController
 public class HttpRequestReceiver {
     private static final Logger logger = LoggerFactory.getLogger(HttpRequestReceiver.class);

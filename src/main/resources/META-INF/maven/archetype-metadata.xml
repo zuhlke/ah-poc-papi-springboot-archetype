@@ -17,6 +17,7 @@
                 <include>api/RequestHandler.java</include>
                 <include>api/HttpRestClient.java</include>
                 <include>api/ReactiveRestClient.java</include>
+                <include>doc_annotation/OpenClosed.java</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true">
