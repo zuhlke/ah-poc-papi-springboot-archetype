@@ -1,6 +1,6 @@
 # ux interview results
 
-## Interview 1: An intern
+## Interview 1: A new graduate
 
 - Working against commit 9c8c12d56306da2acff4c24c674a6942e61cac08
 
