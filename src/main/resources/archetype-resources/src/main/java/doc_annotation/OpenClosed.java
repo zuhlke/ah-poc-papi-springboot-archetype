@@ -1,7 +1,8 @@
 package ${package}.doc_annotation;
 
 /**
- * This class was authored with the intention that it conform to the open-closed principle.
+ * Classes annotated with <strong>@OpenClosed</strong> have been authored with the intention that they conform
+ * to the open-closed principle.
  * <br/>
  * - It is <strong>OPEN for EXTENSION</strong>
  * <br/>
