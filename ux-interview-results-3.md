@@ -147,7 +147,8 @@ Mobile users --[ 1 ]------------> me --[ 2 ]---> backend
 - In the comment at the top of the classes with tests demanding the user to go run the tests, specify that
   they should read and understand the tests for _this_ class.
 
-- The wording of the HttpRequestReceiver is not friendly to a non-native english speaker and should be simplified.
+- The wording of the HttpRequestReceiver documentation is not friendly to a non-native english speaker and should
+  be simplified.
 
 - Expand the classes section of the README to cover all of the classes.
 
