@@ -46,7 +46,7 @@ import org.springframework.web.reactive.function.client.WebClient;
           This script starts the server locally.
 */
 public class Main {
-    @IntelliJShortcutHint("Press ctrl-j(quick documentation) with 'IntelliJShortcutHint highlighted. Read about this documentation annotation.")
+    @IntelliJShortcutHint("Press ctrl-j(quick documentation) with 'IntelliJShortcutHint highlighted. Read about this annotation.")
     @IntelliJShortcutHint("Press alt-enter(show intention actions) with 'main' highlighted. Run the program.")
     @IntelliJShortcutHint("Press alt-enter with 'main' highlighted. Run the program.")
     public static void main(String[] args) {
