@@ -27,15 +27,28 @@ $H What should I do?
 - After you have run the tests, you should read them and make yourself happy with the tiny amount of
   behaviour that is provided to you by this template.
 
+$H What does the template include?
+
+- An object-oriented design which can be easily extended to implement new functionality.
+- An extensible automated test suite to cover the existing functionality.
+- An attitude of goodwill towards fellow developers.
+
+So what is generated?
+
+- A template API is generated. It defines a springboot application with an endpoint called
+  /some-data. This endpoint responds to both GET requests and POST requests.
+  
+- Documentation annotations. These annotations are intended to help you build your API in a way that
+  will help you and your team to develop in a way that is both faster and easier.
+
 $H What is the most effective way for me to use this?
 
-- **A fairly small amount of knowledge will take you a very, very long way:**
+- **A fairly small amount of knowledge will take you a very long way:**
   - Understand the basics of HTTP and how computers use it to communicate over a network.
   - Understand how the Java object oriented programming language works and the associated jargon. Can you
     explain to yourself, in your own words, the difference between a class and an instance? How about a
     function versus a method? A variable versus a field? How are instance methods and fields different to
-    static methods and fields? Can you explain to yourself, in your own words, what is referred to by the
-    phrase "message-passing polymorphism"?
+    static methods and fields? What is "message passing"? What is "polymorphism"?
   - Be familiar and comfortable with using your IDE to efficiently navigate code, run tests and perform
     automated refactorings such as extract variable and extract method.
   - Understand the basics of the entry point to a Springboot application, regarding the RestController and
