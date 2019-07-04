@@ -152,8 +152,6 @@ Mobile users --[ 1 ]------------> me --[ 2 ]---> backend
 
 - Expand the classes section of the README to cover all of the classes.
 
-- Add a test classes section to the README.
-
 - Add a section to the README on how to manually test it using the browser.
 
 - Add manual testing scripts.
