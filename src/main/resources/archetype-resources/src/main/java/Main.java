@@ -1,12 +1,13 @@
-package $package;
+package ${package};
 
 import ${package}.api.RequestHandler;
 import ${package}.api.HttpRestClient;
 import ${package}.api.ReactiveRestClient;
+import ${package}.doc_annotation.IntelliJShortcutHint;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /*
-    Go to the tests: run, read and understand them right now, if you haven't already.
+    Go to the README.md and read it if you haven't already.
 
     What is this class?
         This is the entry point of the program. It is called Main because the first thing
@@ -45,9 +46,10 @@ import org.springframework.web.reactive.function.client.WebClient;
           This script starts the server locally.
 */
 public class Main {
-    // Put your cursor at the end of the line below, just after the '{' and press "alt-enter". Run the program.
+    @IntelliJShortcutHint("Press ctrl-j(quick documentation) with 'IntelliJShortcutHint highlighted. Read about this documentation annotation.")
+    @IntelliJShortcutHint("Press alt-enter(show intention actions) with 'main' highlighted. Run the program.")
+    @IntelliJShortcutHint("Press alt-enter with 'main' highlighted. Run the program.")
     public static void main(String[] args) {
-        // Try "Command-B" with "start" highlighted
         SpringbootApplication.start(args, new RequestHandler(new HttpRestClient(new ReactiveRestClient(WebClient.create()))));
     }
 }

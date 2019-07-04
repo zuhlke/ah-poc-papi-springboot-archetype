@@ -18,6 +18,8 @@
                 <include>api/HttpRestClient.java</include>
                 <include>api/ReactiveRestClient.java</include>
                 <include>doc_annotation/OpenClosed.java</include>
+                <include>doc_annotation/IntelliJShortcutHint.java</include>
+                <include>doc_annotation/IntelliJShortcutHints.java</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true">
