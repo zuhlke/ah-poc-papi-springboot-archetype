@@ -31,7 +31,7 @@
 - They have requested that you produce a demonstrative automated test suite within this project to show that your API does what they
   need it to do.
 
-### Fortunately, the PAPI team has built a template for just this kind of thing!
+### Fortunately, the DS Domain API Reference Team has built a template for just this kind of thing!
 
 - This repository (other than this README) has been auto-generated using a tool called maven archetypes. The PAPI team has designed
   this template to make it as easy as possible for you to deliver this API for the mobile team as quickly as possible.
