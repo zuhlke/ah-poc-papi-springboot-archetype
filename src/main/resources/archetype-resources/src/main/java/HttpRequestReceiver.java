@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /*
-    Go to the tests: run, read and understand them right now, if you haven't already.
+    Go to the tests for _this_ class: run, read and understand them right now, if you haven't already.
 
     This class contains the request mappings for the endpoints which are provided by this API.
 

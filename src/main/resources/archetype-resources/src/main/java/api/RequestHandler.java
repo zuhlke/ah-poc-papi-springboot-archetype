@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.stream.Collectors;
 
 /*
-    Go to the tests: run, read and understand them right now, if you haven't already.
+    Go to the tests for _this_ class: run, read and understand them right now, if you haven't already.
 
     This class provides an annotation-free interface for responding to REST calls. It is immediately
     delegated to by the HttpRequestReceiver in the top level to handle incoming requests.
