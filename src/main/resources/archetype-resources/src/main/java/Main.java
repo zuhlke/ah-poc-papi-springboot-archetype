@@ -14,7 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
         you learn in Java is that `Main` is the entry point.
         This is one example of "The Power of Sameness".
 
-    How does this API work?
+    How does Springboot work, basically?
         The Springboot framework uses the Spring framework to automatically route incoming
         HTTP requests into the application at specified points. Those points are the
         _Mappings_ defined within classes annotated with _@RestController_, in this case,
@@ -36,6 +36,10 @@ import org.springframework.web.reactive.function.client.WebClient;
         - README.md
           This is a markdown file with information about how to use this repository to write
           APIs effectively.
+        - API-README.md
+          This is markdown file with a template to fill out with information about your API
+          in particular. Once your have become familiar in this repository, this should become
+          your main README file.
         - run-tests
           This is an executable script for running all the tests in the repository, including
           both unit and integration tests.
@@ -43,7 +47,7 @@ import org.springframework.web.reactive.function.client.WebClient;
           This is an executable script which builds a jar. The location of the jar is given in
           the output of the script.
         - start-server
-          This script starts the server locally.
+          This script starts the server locally in the foreground.
 */
 public class Main {
     @IntelliJShortcutHint("Press ctrl-j(quick documentation) with 'IntelliJShortcutHint highlighted. Read about this annotation.")
